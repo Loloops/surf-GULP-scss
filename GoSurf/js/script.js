@@ -15,7 +15,13 @@ $(function(){
     slidesToScroll: 4,
     infinite: false,
    
-    asNavFor: '.header__slider'
+    asNavFor: '.header__slider',
+    responsive: [
+      {
+        breakpoint: 961,
+        setting: "unslick"
+      },
+    ]
   });
 /* /HEADER */
 
@@ -25,7 +31,28 @@ $(function(){
     slidesToScroll: 1,
     prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/header/ArrowLeft.svg" alt=""></img>',
     nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/header/ArrowRight.svg" alt=""></img>',
-    asNavFor: '.slider-map'
+    asNavFor: '.slider-map',
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3
+          
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 667,
+      settings: {
+        slidesToShow: 1
+    },
+  }
+    ]
   });
 
   $('.slider-map').slick({
@@ -34,7 +61,47 @@ $(function(){
     arrows: false,
     asNavFor: '.serf-slider',
     focusOnSelect: true,
-    infinite: false
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: '40px'
+      }
+    },
+    {
+      breakpoint: 667,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        centerMode: true
+        
+    },
+  },
+  {
+    breakpoint: 380,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      centerMode: false
+      
+  },
+}
+    ]
   });
 /* /SURF */
   $('.holder__slider').slick({
@@ -112,6 +179,10 @@ $(function(){
       prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/header/ArrowLeft.svg" alt=""></img>',
       nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/header/ArrowRight.svg" alt=""></img>'
 
+    });
+
+    $('.menu-btn').on('click', function(){
+      $('.menu').toggleClass('active');
     });
 
 });
