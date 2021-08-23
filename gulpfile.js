@@ -99,6 +99,9 @@ function fonts() {
 
 function js() {
     return src(path.app.js)
+    .pipe(src([
+        'node_modules/wow.js/dist/wow.js'
+    ]))
     .pipe(fileinclude())
     .pipe(dest(path.build.js))
     .pipe(
@@ -124,7 +127,8 @@ function html() {
 function css() {
     return src(path.app.css)
     .pipe(src([
-        'node_modules/animate.css/animate.css'
+        'node_modules/animate.css/animate.css',
+        'node_modules/wow.js/dist/wow.min.js'
     ]))
     .pipe(
         scss({

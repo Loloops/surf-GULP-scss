@@ -498,6 +498,8 @@ body {
   background-color: #171919;
   color: #fff;
   text-transform: uppercase;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 a {
@@ -555,7 +557,7 @@ a {
   top: 50%;
 }
 
-.title span {
+.title div {
   font-weight: 800;
   font-size: 200px;
   position: relative;
@@ -563,6 +565,10 @@ a {
   -webkit-transform: translateX(-50px);
       -ms-transform: translateX(-50px);
           transform: translateX(-50px);
+  display: inline-block;
+}
+
+.title span {
   display: inline-block;
 }
 
